@@ -19,13 +19,7 @@ def genHeightMap(xp=10, yp=10, passes=1):
 def remEdges(arr):
     for y in range(0, arr.shape[1]):
         for x in range(0, arr.shape[0]):
-            if (x == 0):
-                arr[x,y] = 0
-            if (y == 0):
-                arr[x,y] = 0
-            if (x == arr.shape[0]):
-                arr[x,y] = 0
-            if (y == arr.shape[1]):
+            if (x == 0 or y == 0 or x == arr.shape[0] or x == arr.shape[1]):
                 arr[x,y] = 0
             
     return arr
